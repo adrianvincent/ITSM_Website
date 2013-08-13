@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+  <!--<![endif]-->
+  <head>
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8"></meta>
+    <title>ITSM Ticketing Form v5</title>
+    <meta name="description" content="ITSM Ticketing Form V2">
+    </meta>
+    <meta name="author" content="Adrian-Vincent Usi"></meta>
+    <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1">
+    </meta>
+    <!-- JavaScript
+  ================================================== -->
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js">
+    </script>
+    <script src="js/jquery.autosize.js"></script>
+    <script src="js/write-results.js"></script>
+    <script src="js/display.js"></script>
+    <script src="js/functions.js"></script>
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="css/base.css"></link>
+    <link rel="stylesheet" href="css/skeleton.css"></link>
+    <link rel="stylesheet" href="css/layout.css"></link>
+    <link rel="stylesheet" href="css/main.css"></link>
+    <link rel="stylesheet"
+    href="css/redmond/jquery-ui-1.9.2.custom.min.css" />
+    <!-- Favicon
+        ================================================== -->
+    <link rel="shortcut icon" href="src/images/favicon.ico"></link>
+  </head>
+  <body>
+    <div class="container">
+      <div class="two columns sidebar">
+      <nav>
+      <!-- Navigation Bar
+        ================================================== -->
+      &#160; 
+      <h4 id="guide">
+        <a>Guide</a>
+      </h4>
+      <ul id="guide_list">
+        <li>
+          <a href="#existing_incident">Existing Incident</a>
+        </li>
+        <li>
+          <a href="#contact_information">Contact Info</a>
+        </li>
+        <li>
+          <a href="#issue_details">Issue Details</a>
+        </li>
+        <li>
+          <a href="#related_tickets">Related Tickets</a>
+        </li>
+        <li>
+          <a href="#resolution">Resolution Details</a>
+        </li>
+        <li>
+          <a href="#impact_urgency">Impact &amp; Urgency</a>
+        </li>
+      </ul>
+      <h4 id="quick_tickets">
+        <a>Quick Tickets</a>
+      </h4>
+      <ul id="quick_tickets_list">
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=877','mywindowtitle','width=800,height=600')">
+          AD Account Unlock</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=922','mywindowtitle','width=800,height=600')">
+          AD Password Reset</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=878','mywindowtitle','width=800,height=600')">
+          Checkpoint</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=1411','mywindowtitle','width=800,height=600')">
+          Kronos Unlock</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=2444','mywindowtitle','width=800,height=600')">
+          Missing Outlook Icon</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=877','mywindowtitle','width=800,height=600')">
+          BLAH!</a>
+        </li>
+      </ul></nav>&#160;</div>
+      <!-- Header
+        ================================================== -->
+      <div class="twelve columns offset-by-one content">
+        <header>
+          <h1>ITSM Ticket Form v.2</h1>
+        </header>
+        <hr class="large" />
+        <form action="" method="" name="form">
+          <!-- Step 1
+        ================================================== -->
+          <div class="doc-section" id="existing_incident">
+            <div id="tabs">
+              <ul>
+                <li>
+                  <a href="#tabs-1">ITSM</a>
+                </li>
+                <li>
+                  <a href="#tabs-2">ePortal</a>
+                </li>
+              </ul>
+              <div id="tabs-1">
+                <!-- Tabs are elimiating this step
+        ================================================== -->
+                <p>
+                  <h4>Is this an existing incident?</h4>
+                  <label for="yes_existing_incident">
+                    <input type="radio"
+                    name="existing_incident_radios"
+                    id="yes_existing_incident"
+                    value="yes_existing_incident"
+                    onclick="writeResultEXISTING_INCIDENT('Yes');" />
+                    <span>Yes, user is calling about an existing
+                    incident</span>
+                  </label>
+                  <label for="no_existing_incident">
+                    <input type="radio"
+                    name="existing_incident_radios"
+                    id="no_existing_incident"
+                    value="no_existing_incident"
+                    onclick="runFunctions();" />
+                    <span>No, user is calling about a new
+                    issue</span>
+                  </label>
+                </p>
+                <p>
+                  <label for="existing_ticket_number">Enter the
+                  ticket number
+                  <input type="text" id="existing_ticket_number">
+                    <input id="find_ticket" type="button"
+                    value="Find">
+                      <!-- Step 2
+        ================================================== -->
+                      <div class="doc-section"
+                      id="contact_information">
+                        <h4>Contact Information</h4>
+                        <div class="five columns alpha">
+                          <p>
+                            <label for="contact_name">Contact
+                            Name</label>
+                            <input type="text" id="contact_name" />
+                          </p>
+                        </div>
+                        <div class="five columns omega">
+                          <p>
+                            <label for="contact_location">Contact
+                            Location</label>
+                            <input type="text"
+                            id="contact_location" />
+                          </p>
+                        </div>
+                        <div class="doc-section">
+                          <div class="five columns alpha">
+                            <p>
+                              <label for="contact_number">Contact
+                              Number</label>
+                              <input type="text"
+                              id="contact_number" />
+                            </p>
+                          </div>
+                          <div class="five columns omega"></div>
+                        </div>
+                        <hr />
+                      </div>
+                      <!-- Step 3
+        ================================================== -->
+                      <div class="doc-section" id="brief_issue">
+                        <h4>Issue Description</h4>
+                        <div class="five columns alpha">
+                          <p>
+                            <label for="application_name">
+                            Application Name</label>
+                            <input type="text"
+                            id="application_name"
+                            title="Name of the application or program the user is calling about." />
+                          </p>
+                        </div>
+                        <div class="five columns omega">
+                          <p>
+                            <label for="application_issue">
+                            Application Issue</label>
+                            <input type="text"
+                            id="application_issue"
+                            title="What is broken or what needs updating?" />
+                          </p>
+                        </div>
+                      </div>
+                      <label for="application_category">Application
+                      Category</label>
+                      <input type="text"
+                      id="application_category" />
+                      <!-- Step 4
+        ================================================== -->
+                      <div class="doc-section">
+                        <div class="five columns alpha">
+                          <p>
+                            <label for="last_working_date">Last
+                            Working Date</label>
+                            <input type="text" id="datepicker" />
+                            <!--    <div id="datepicker"></div>             -->
+                          </p>
+                        </div>
+                        <div class="five columns omega">
+                          <p>
+                            <label for="ip_address">IP or Computer
+                            Name</label>
+                            <input type="text" id="ip_address"
+                            title="10.3.x.x or MCA-??" />
+                          </p>
+                        </div>
+                      </div>
+                      <hr />
+                      <!-- Step 5
+        ================================================== -->
+                      <!-- Step 6
+        ================================================== -->
+                      <div class="doc-section" id="issue_details">
+                        <h4>Ticket Information</h4>
+                        <div class="four columns alpha">
+                          <p>
+                            <label for="general_ticket">
+                              <input type="radio"
+                              name="ticket_templates"
+                              id="general_ticket" value=""
+                              onclick="writeResultGENERAL('');" />
+                              <span>General Ticket</span>
+                            </label>
+                            <label for="qnxt_ticket">
+                              <input type="radio"
+                              name="ticket_templates"
+                              id="qnxt_ticket" value=""
+                              onclick="writeResultQNXT('');" />
+                              <span>QNXT Ticket</span>
+                            </label>
+                            <label for="vpn_ticket">
+                              <input type="radio"
+                              name="ticket_templates"
+                              id="vpn_ticket" value=""
+                              onclick="writeResultVPN('');" />
+                              <span>VPN Ticket</span>
+                            </label>
+                            <label for="telephony_ticket">
+                              <input type="radio"
+                              name="ticket_templates"
+                              id="telephony_ticket" value=""
+                              onclick="writeResultTELEPHONY('');" />
+                              <span>Telephony Ticket</span>
+                            </label>
+                            <label for="network_ticket">
+                              <input type="radio"
+                              name="ticket_templates"
+                              id="network_ticket" value=""
+                              onclick="writeResultNETWORK('');" />
+                              <span>Network Ticket</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="seven columns omega">
+                          <p>
+                            <textarea name="normal" id="normal">
+                            </textarea>
+                          </p>
+                        </div>
+                      </div>
+                      <hr />
+                      <!-- Step 7
+        ================================================== -->
+                      <div class="doc-section"
+                      id="related_tickets">
+                        <h4>Related Tickets</h4>
+                        <p>If this has the potential to become a
+                        SEV1 issue, have you checked the Altiris
+                        queue for similar tickets? </p>
+                        <label for="yes_related_tickets">
+                          <input type="radio"
+                          name="related_tickets"
+                          id="yes_related_tickets"
+                          value="Yes, I have checked with the team regarding related tickets" />
+                          <span>Yes, I have checked with the team
+                          regarding related tickets</span>
+                        </label>
+                        <label for="no_related_tickets">
+                          <input type="radio"
+                          name="related_tickets"
+                          id="no_related_tickets"
+                          value="No, this is not a potential SEV1 issue" />
+                          <span>No, this is not a potential SEV1
+                          issue</span>
+                        </label>
+                       
+                        <h4>Ticket Type</h4>
+                        <p>What kind of ticket is this? </p>
+                        <label for="servicerequest_ticket">
+                          <input type="radio"
+                          name="type_of_tickets"
+                          id="servicerequest_ticket"
+                          value="Service Request"
+                          onclick="writeResultTYPE_OF_TICKET('Service Request');" />
+                          <span>Service Request - Account locked?
+                          Need something installed?</span>
+                        </label>
+                        <label for="incident_ticket">
+                          <input type="radio"
+                          name="type_of_tickets"
+                          id="incident_ticket" value="Incident"
+                          onclick="writeResultTYPE_OF_TICKET('Incident');" />
+                          <span>Incident - Broken application?
+                          Break-fix issue? Unable to
+                          connect?</span>
+                        </label>
+                        <hr />
+                        <!-- Step 8
+        ================================================== -->
+                        <div class="doc-section" id="resolution">
+                          
+                            <h4>Resolution Details</h4>
+                            <p>Were you able to resolve or find a
+                            temporary workaround? </p>
+                            <label for="resolution_fix">
+                              <input type="radio"
+                              name="resolutions"
+                              id="resolution_fix"
+                              value="Yes, resolved. Steps listed below." />
+                              <span>Yes, resolved. Steps listed
+                              below</span>
+                            </label>
+                            <label for="resolution_workaround">
+                              <input type="radio"
+                              name="resolutions"
+                              id="resolution_workaround"
+                              value="Yes, resolved but with a workaround." />
+                              <span>Yes, resolved but with a
+                              workaround</span>
+                            </label>
+                            
+                            <h4>Routing Information</h4>
+                            <p>Where or which team are you sending
+                            this ticket to? </p>
+                            <label for="resolution_routing">
+                              <input type="radio"
+                              name="resolutions"
+                              id="resolution_routing"
+                              value="Routing ticket to appropriate team." />
+                              <span>Not supported by the Service
+                              Desk. Routing ticket to appropriate
+                              team.</span>
+                            </label>
+                            <label for="resolution_local">
+                              <input type="radio"
+                              name="resolutions"
+                              id="resolution_local"
+                              value="Requesting local tech for user support." />
+                              <span>Service Desk unable to support
+                              user. Requesting local tech for user
+                              support.</span>
+                            </label>
+                            <p>
+                              <textarea name="resolution_details"
+                              id="resolution_details"></textarea>
+                            </p>
+                            <p>
+                              <label for="building_location">Floor,
+                              Department and Cubicle</label>
+                              <input type="text"
+                              id="building_location"
+                              title="Bothell, 1st floor, IT, cube #20-221" />
+                            </p>
+							</div>
+                            <hr />
+                            <!-- Step 9
+        ================================================== -->
+                            <div class="doc-section"
+                            id="impact_urgency">
+                            <h4>Impact &amp; Urgency</h4>
+                            <p>How many people are affected?</p>
+                            <label for="impact_low">
+                              <input type="radio" name="impact"
+                              id="impact_low"
+                              onclick="writeResultIMPACT('Low (single user)')" />
+                              <span>Single User</span>
+                            </label>
+                            <label for="impact_medium">
+                              <input type="radio" name="impact"
+                              id="impact_medium"
+                              onclick="writeResultIMPACT('Medium - VIP or More than one user but less than an entire department');" />
+                              <span>More than one user but less
+                              than an entire department</span>
+                            </label>
+                            <label for="impact_high">
+                              <input type="radio" name="impact"
+                              id="impact_high"
+                              onclick="writeResultIMPACT('High - Entire department');" />
+                              <span>VIPs, one or more entire
+                              departments but less than a
+                              state</span>
+                            </label>
+                            <label for="impact_critical">
+                              <input type="radio" name="impact"
+                              id="impact_critical"
+                              onclick="writeResultIMPACT('Critical - One or more entire states/entire company/external and state customer');" />
+                              <span>One or more entire states,
+                              entire company or an external
+                              customer</span>
+                            </label></p>&#160; 
+                            <div style="text-align:center;">
+                              <img id="tablemap"
+                              src="img/table1.png"
+                              usemap="#tablemap" border="0"
+                              width="750" height="400"
+                              style="border:0px solid #ccc" />
+                              <map id="_tablemap" name="tablemap">
+                                <area shape="rect"
+                                coords="88,45,182,107"
+                                onclick="javascript:writeResultURGENCY('Critical; Tier 1 - Full Disruption during Production Hours');" />
+                                <area shape="rect"
+                                coords="89,136,183,198"
+                                onclick="javascript:writeResultURGENCY('High; Tier 1 - Partial Disruption during Production Hours');" />
+                                <area shape="rect"
+                                coords="189,138,283,200"
+                                onclick="javascript:writeResultURGENCY('High; Tier 1 - Full Disruption during Non-Production Hours');" />
+                                <area shape="rect"
+                                coords="311,138,405,200"
+                                onclick="javascript:writeResultURGENCY('High; Tier 2 - Full Disruption during Production Hours');" />
+                                <area shape="rect"
+                                coords="189,229,283,291"
+                                onclick="javascript:writeResultURGENCY('Medium; Tier 1 - Partial Disruption during Non-Production Hours');" />
+                                <area shape="rect"
+                                coords="311,227,405,289"
+                                onclick="javascript:writeResultURGENCY('Medium; Tier 2 - Partial Disruption during Production Hours');" />
+                                <area shape="rect"
+                                coords="413,227,507,289"
+                                onclick="javascript:writeResultURGENCY('Medium; Tier 2 - Full Disruption during Non-Production Hours');" />
+                                <area shape="rect"
+                                coords="537,229,631,291"
+                                onclick="javascript:writeResultURGENCY('Medium; Tier 3 - Full Disruption during Production Hours');" />
+                                <area shape="rect"
+                                coords="414,318,508,380"
+                                onclick="javascript:writeResultURGENCY('Low; Tier 2 - Partial Disruption during Non-Production Hours');" />
+                                <area shape="rect"
+                                coords="536,320,726,382"
+                                onclick="javascript:writeResultURGENCY('Low; Tier 3 - Partial Disruption during Production or Non-Production Hours');" />
+                              </map>
+                              <input type="text"
+                              id="urgency_display" title=""></div>
+                                <hr />
+                                <!-- Step 10
+        ================================================== -->
+                                <div class="doc-section">
+                                  <p>
+                                    <button type="submit"
+                                    id="startstoptimer"
+                                    onclick="javascript:if(confirm('Submit form?')) {window.location.reload();};runFunctions2()">
+                                    Submit Form</button>
+                                    <button type="button"
+                                    id="dialog-btn">Submit
+                                    Form</button>
+                                  </p>
+                                </div>
+                                <div id="tabs-2">
+                                  <!-- Step 2
+        ================================================== -->
+                                  <h4>adsfadsf</h4>
+                                </div>
+                                <hr />
+                                <div id="dialog"
+                                title="ITSM Ticket Wizard"></div>
+                                <!-- Hidden Inputs
+        ================================================== -->
+                                <input type="text"
+                                name="existing_incident_out"
+                                id="existing_incident_out"
+                                size="40" style="display: none;" />
+                                <input type="text"
+                                name="type_of_ticket_out"
+                                id="type_of_ticket_out" size="40"
+                                style="display: none;" />
+                                <input type="text"
+                                name="urgency_out" id="urgency_out"
+                                size="40" style="display: none;" />
+                                <input type="text"
+                                name="impact_out" id="impact_out"
+                                size="40" style="display: none;" />
+                                <input type="text"
+                                name="timer_start" id="timer_start"
+                                size="40" style="display: none;" />
+                                <input type="text" name="timer_end"
+                                id="timer_end" size="40"
+                                style="display: none;" />
+                                <!-- End Footers
+        ================================================== -->
+                                <!-- content -->
+                                <!-- container -->
+                                <div class="resize">
+                                  <input id="clock" type="text"
+                                  value="00:00"
+                                  style="background-color:white;border:1px solid gray;font-weight:bold;font-size:16pt;">
+
+                                    <!-- Body Loading JavaScript
+          ================================================== -->
+                                    <script>$( "#application_name"
+                                    ).autocomplete({ source: [
+                                    "Adobe Reader", "Altiris",
+                                    "ASP", "Autosys Dev",
+                                    "Blackberry Desktop Manager",
+                                    "Blackberry Devices Drivers",
+                                    "Call Scripting", "Care
+                                    Advance", "CCH TeamMate",
+                                    "Checkpoint", "Concur Premier",
+                                    "Centricity Practice
+                                    Solutions", "Cisco IP Phone",
+                                    "Cisco Unified CallManager",
+                                    "Cisco VPN Client", "Cisco
+                                    WebEx Connect", "Citrix",
+                                    "Emptoris", "Equity Edge",
+                                    "FileNet", "Firewall",
+                                    "ImageNow", "Interactive Voice
+                                    Response (IVR)", "Kronos",
+                                    "Microsoft Exchange",
+                                    "Microsoft Outlook", "Microsoft
+                                    Project", "Microsoft SharePoint
+                                    (Intranet)", "Microsoft SQL
+                                    Server", "Microsoft Visio",
+                                    "Microsoft Visual Studio",
+                                    "Mobile Device", "Oracle
+                                    Primavera", "Printer", "Ruby",
+                                    "TechSmith SnagIT", "QNXT",
+                                    "Voicemail", "VZAccess
+                                    Manager", "Websense" ] });
+                                    $("#application_category").autocomplete({
+                                    source : [ "Applications -
+                                    Corporate Business &gt; Change
+                                    Management Database (CMD)",
+                                    "Applications - Corporate
+                                    Business", "Applications -
+                                    Corporate Business &gt;
+                                    Altiris", "Applications -
+                                    Corporate Business &gt; CCH
+                                    TeamMate", "Applications -
+                                    Corporate Business &gt; Concur
+                                    Premier", "Applications -
+                                    Corporate Business &gt;
+                                    Emptoris", "Applications -
+                                    Corporate Business &gt; Equity
+                                    Edge", "Applications -
+                                    Corporate Business &gt;
+                                    FileNet", "Applications -
+                                    Corporate Business &gt;
+                                    ImageNow", "Applications -
+                                    Corporate Business &gt;
+                                    Kronos", "Applications -
+                                    Corporate Business &gt;
+                                    Microsoft Exchange (Email)",
+                                    "Applications - Corporate
+                                    Business &gt; Microsoft
+                                    SharePoint (Intranet)",
+                                    "Applications - Corporate
+                                    Business &gt; MultiTrans
+                                    Prism", "Applications -
+                                    Corporate Business &gt;
+                                    OpenPages", "Applications -
+                                    Corporate Business &gt; Oracle
+                                    Business Intelligence
+                                    Enterprise (OBIE)",
+                                    "Applications - Corporate
+                                    Business &gt; Oracle
+                                    Primavera", "Applications -
+                                    Corporate Business &gt; Other",
+                                    "Applications - Corporate
+                                    Business &gt; Rational
+                                    ClearCase", "Applications -
+                                    Corporate Business &gt;
+                                    Statistical Analysis System
+                                    (SAS)", "Applications -
+                                    Corporate Business &gt; User
+                                    Management Resource
+                                    Administrator (UMRA)",
+                                    "Applications - Desktop",
+                                    "Applications - Desktop &gt;
+                                    7-ZIP", "Applications - Desktop
+                                    &gt; Adobe Acrobat [*]",
+                                    "Applications - Desktop &gt;
+                                    Adobe Captivate [*]",
+                                    "Applications - Desktop &gt;
+                                    Adobe Flash Player",
+                                    "Applications - Desktop &gt;
+                                    Adobe Reader", "Applications -
+                                    Desktop &gt; Articulate
+                                    Powerpoint Template [*]",
+                                    "Applications - Desktop &gt;
+                                    Articulate Presenter",
+                                    "Applications - Desktop &gt;
+                                    Attachmate Extra X-treme [*]",
+                                    "Applications - Desktop &gt;
+                                    Beyond Compare [*]",
+                                    "Applications - Desktop &gt;
+                                    BlackBerry Desktop Manager",
+                                    "Applications - Desktop &gt;
+                                    BlackBerry Device Drivers",
+                                    "Applications - Desktop &gt;
+                                    BMC Remedy", "Applications -
+                                    Desktop &gt; CA Erwin Data
+                                    Modler [*]", "Applications -
+                                    Desktop &gt; Checkpoint
+                                    Pointsec", "Applications -
+                                    Desktop &gt; Cisco Agent
+                                    Desktop (CAD)", "Applications -
+                                    Desktop &gt; Cisco Supervisor
+                                    Desktop (CSD)", "Applications -
+                                    Desktop &gt; Cisco Unified
+                                    Video Advantage", "Applications
+                                    - Desktop &gt; Cisco Virtual
+                                    Private Network (VPN)",
+                                    "Applications - Desktop &gt;
+                                    Citrix", "Applications -
+                                    Desktop &gt; Citrix Online
+                                    Plugin", "Applications -
+                                    Desktop &gt; Citrix Receiver",
+                                    "Applications - Desktop &gt;
+                                    Code Wright", "Applications -
+                                    Desktop &gt; Cogniview PDF2XL
+                                    [*]", "Applications - Desktop
+                                    &gt; Crystal Reports [*]",
+                                    "Applications - Desktop &gt;
+                                    CypressWeb", "Applications -
+                                    Desktop &gt; DameWare [*]",
+                                    "Applications - Desktop &gt;
+                                    Datawatch Business Document
+                                    Server (BDS)", "Applications -
+                                    Desktop &gt; FileZilla",
+                                    "Applications - Desktop &gt;
+                                    GIMP Image Editor",
+                                    "Applications - Desktop &gt; HP
+                                    Quality Center (QC) [*]",
+                                    "Applications - Desktop &gt;
+                                    Hummingbird Exceed [*]",
+                                    "Applications - Desktop &gt;
+                                    IBM DB2 Connect [*]",
+                                    "Applications - Desktop &gt;
+                                    Ingenix Encoder Pro",
+                                    "Applications - Desktop &gt;
+                                    IronPort Secure Email",
+                                    "Applications - Desktop &gt;
+                                    KeePass Password Safe",
+                                    "Applications - Desktop &gt;
+                                    Laserfiche - Document
+                                    Management", "Applications -
+                                    Desktop &gt; McKesson Claim
+                                    Check [*]", "Applications -
+                                    Desktop &gt; Meadco ScriptX
+                                    Action", "Applications -
+                                    Desktop &gt; Microsoft Access",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Calendar Printing
+                                    Assistant", "Applications -
+                                    Desktop &gt; Microsoft
+                                    Enterprise Library",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Expression Blend
+                                    [*]", "Applications - Desktop
+                                    &gt; Microsoft Internet
+                                    Explorer", "Applications -
+                                    Desktop &gt; Microsoft Office",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Office - Excel",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Office - Outlook
+                                    (Email)", "Applications -
+                                    Desktop &gt; Microsoft Office -
+                                    PowerPoint", "Applications -
+                                    Desktop &gt; Microsoft Office -
+                                    Word", "Applications - Desktop
+                                    &gt; Microsoft Office
+                                    Compatability Pack",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Project [*]",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Publisher",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Remote Desktop
+                                    Connection", "Applications -
+                                    Desktop &gt; Microsoft
+                                    SharePoint Designer",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Virtual PC",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Visio [*]",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Visio Viewer",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Visual Basic",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Visual SourceSafe
+                                    (VSS)", "Applications - Desktop
+                                    &gt; Microsoft Visual Studio",
+                                    "Applications - Desktop &gt;
+                                    Microsoft Visual Studio Team
+                                    Explorer", "Applications -
+                                    Desktop &gt; Microsoft
+                                    Windows", "Applications -
+                                    Desktop &gt; Nitro PDF Pro
+                                    [*]", "Applications - Desktop
+                                    &gt; Notepad+", "Applications -
+                                    Desktop &gt; OADES Claims
+                                    Retrieval [*]", "Applications -
+                                    Desktop &gt; Other",
+                                    "Applications - Desktop &gt;
+                                    PDF Creator", "Applications -
+                                    Desktop &gt; Pretty Good
+                                    Privacy (PGP) Desktop [*]",
+                                    "Applications - Desktop &gt;
+                                    ProClarity Web Professional",
+                                    "Applications - Desktop &gt;
+                                    Putty", "Applications - Desktop
+                                    &gt; R for Windows",
+                                    "Applications - Desktop &gt;
+                                    Reflections", "Applications -
+                                    Desktop &gt; RightFax - Desktop
+                                    Faxing", "Applications -
+                                    Desktop &gt; RS Client Print",
+                                    "Applications - Desktop &gt;
+                                    Sun Java Runtime Environment
+                                    (JRE)", "Applications - Desktop
+                                    &gt; Symantec Endpoint
+                                    Protection (SEP)",
+                                    "Applications - Desktop &gt;
+                                    Symantec Enterprise Vault",
+                                    "Applications - Desktop &gt;
+                                    Syntellect Resource Manager",
+                                    "Applications - Desktop &gt;
+                                    TechSmith Camtasia [*]",
+                                    "Applications - Desktop &gt;
+                                    TechSmith SnagIt [*]",
+                                    "Applications - Desktop &gt;
+                                    Toad for Oracle [*]",
+                                    "Applications - Desktop &gt;
+                                    TotalView Workforce
+                                    Management", "Applications -
+                                    Desktop &gt; UltraEdit [*]",
+                                    "Applications - Desktop &gt;
+                                    Verint Impact 360 Quality
+                                    Monitoring (QM)", "Applications
+                                    - Desktop &gt; Verint Witness
+                                    Actionable Solutions",
+                                    "Applications - Desktop &gt;
+                                    VLC Media Player",
+                                    "Applications - Desktop &gt;
+                                    Web.Strat", "Applications -
+                                    Desktop &gt; Windows Secure
+                                    CoPy (WinSCP)", "Applications -
+                                    Desktop &gt; WinZip [*]",
+                                    "Applications - Desktop &gt;
+                                    WRQ Reflection", "Applications
+                                    - Health Care", "Applications -
+                                    Health Care &gt; Appeals &amp;
+                                    Grievances (A&amp;G)",
+                                    "Applications - Health Care
+                                    &gt; BizTalk", "Applications -
+                                    Health Care &gt; CACTUS",
+                                    "Applications - Health Care
+                                    &gt; California Children
+                                    Services (CCS)", "Applications
+                                    - Health Care &gt; Care Enhance
+                                    InterQual", "Applications -
+                                    Health Care &gt; Case
+                                    Management Extraction Tool
+                                    (CMET)", "Applications - Health
+                                    Care &gt; Cincom",
+                                    "Applications - Health Care
+                                    &gt; Claims and Encounters
+                                    Management System (CEMS)",
+                                    "Applications - Health Care
+                                    &gt; Claims Audit Tool .NET
+                                    (CATNET)", "Applications -
+                                    Health Care &gt; Claims
+                                    Editor", "Applications - Health
+                                    Care &gt; Claims Recovery",
+                                    "Applications - Health Care
+                                    &gt; Claims Viewer",
+                                    "Applications - Health Care
+                                    &gt; Clinical CareAdvance",
+                                    "Applications - Health Care
+                                    &gt; Contract Information
+                                    Management (CIM) Workflow",
+                                    "Applications - Health Care
+                                    &gt; Customer Information
+                                    Control System (CICS)",
+                                    "Applications - Health Care
+                                    &gt; Decision Support Systems
+                                    (DSS)", "Applications - Health
+                                    Care &gt; Division of Financial
+                                    Responsibility (DOFR)",
+                                    "Applications - Health Care
+                                    &gt; Domain Assessment Tool
+                                    (DAT)", "Applications - Health
+                                    Care &gt; Electronic Medical
+                                    Records (EDI)", "Applications -
+                                    Health Care &gt; ePortal - File
+                                    Exchange Services",
+                                    "Applications - Health Care
+                                    &gt; ePortal - Member Self
+                                    Service", "Applications -
+                                    Health Care &gt; Facility Site
+                                    Review (FSR)", "Applications -
+                                    Health Care &gt; HEDIS Server",
+                                    "Applications - Health Care
+                                    &gt; HMS - Coordination of
+                                    Benefits (COB)", "Applications
+                                    - Health Care &gt; HP Quality
+                                    Center (QC)", "Applications -
+                                    Health Care &gt; K2 Claims
+                                    Workflow", "Applications -
+                                    Health Care &gt; LVM Nurse
+                                    Advice Line (NAL)",
+                                    "Applications - Health Care
+                                    &gt; Master Provider File (MPF)
+                                    Viewer", "Applications - Health
+                                    Care &gt; Medicare Advantage
+                                    Prescription Drug (MAPD)",
+                                    "Applications - Health Care
+                                    &gt; Medinsight", "Applications
+                                    - Health Care &gt; Member
+                                    Utility", "Applications -
+                                    Health Care &gt; Misdirected
+                                    Claims", "Applications - Health
+                                    Care &gt; Molina Eligibility
+                                    Gateway (MEG)", "Applications -
+                                    Health Care &gt; NetworX
+                                    Modeler", "Applications -
+                                    Health Care &gt; Operational
+                                    Data Store (ODS)",
+                                    "Applications - Health Care
+                                    &gt; Outbound Encounters
+                                    Management System (OEMS)",
+                                    "Applications - Health Care
+                                    &gt; Pacific Coast Pharmacy",
+                                    "Applications - Health Care
+                                    &gt; Pay for Performance
+                                    (P4P)", "Applications - Health
+                                    Care &gt; PETS", "Applications
+                                    - Health Care &gt; Point of
+                                    Sale (POS)", "Applications -
+                                    Health Care &gt; Premium
+                                    Reconciliation", "Applications
+                                    - Health Care &gt; Provider
+                                    Contract Utility",
+                                    "Applications - Health Care
+                                    &gt; Provider Dispute
+                                    Resolution (PDR) Database",
+                                    "Applications - Health Care
+                                    &gt; salesforce.com (SFDC)",
+                                    "Applications - Health Care
+                                    &gt; UMK2", "Applications -
+                                    Health Care &gt; Waiver Request
+                                    Management System (WRMS)",
+                                    "Applications - Health Care
+                                    &gt; www.molinaclinics.com",
+                                    "Applications - Health Care
+                                    &gt; www.molinamedicare.com",
+                                    "Applications - Health Care
+                                    Systems", "Applications -
+                                    Healthcare", "Applications -
+                                    Healthcare &gt; Risk Navigator
+                                    Clinical", "Applications -
+                                    Health Care &gt; Appeals &amp;
+                                    Grievances (A&amp;G)", "ERP",
+                                    "Hardware", "Hardware &gt;
+                                    Mobile Device - Blackberry",
+                                    "Hardware &gt; Printer",
+                                    "Hardware &gt; VDI", "HD -
+                                    Desktop Support", "Human
+                                    Resources &gt; Above the
+                                    Branches", "IT Use Only &gt;
+                                    Core Systems", "IT Use Only
+                                    &gt; Core Systems &gt;
+                                    Adminisource/ERA/EFT", "IT Use
+                                    Only &gt; Core Systems &gt;
+                                    Care Advance", "IT Use Only
+                                    &gt; Core Systems &gt;
+                                    CHAMP/PDR", "IT Use Only &gt;
+                                    Core Systems &gt; EMR", "IT Use
+                                    Only &gt; Core Systems &gt;
+                                    TFS", "IT Use Only &gt; DBA",
+                                    "MMS", "Network &amp;
+                                    Telephony", "Network &amp;
+                                    Telephony &gt; Autosys Dev",
+                                    "Network &amp; Telephony &gt;
+                                    Call Scripting", "Network &amp;
+                                    Telephony &gt; Centricity
+                                    Practice Solution (CPS)",
+                                    "Network &amp; Telephony &gt;
+                                    Cisco IP Phone", "Network &amp;
+                                    Telephony &gt; Cisco
+                                    TelePresence", "Network &amp;
+                                    Telephony &gt; Cisco Unified
+                                    CallManager", "Network &amp;
+                                    Telephony &gt; Cisco Virtual
+                                    Private Network (VPN)",
+                                    "Network &amp; Telephony &gt;
+                                    Cisco Webex", "Network &amp;
+                                    Telephony &gt; Firewall",
+                                    "Network &amp; Telephony &gt;
+                                    Interactive Voice Response
+                                    (IVR)", "Network &amp;
+                                    Telephony &gt; Microsoft SQL
+                                    Server", "Network &amp;
+                                    Telephony &gt; System Center
+                                    Operations Manager (SCOM)",
+                                    "Network &amp; Telephony &gt;
+                                    Voicemail", "Network &amp;
+                                    Telephony &gt; VZAccess
+                                    Manager", "Network &amp;
+                                    Telephony &gt; WebSense",
+                                    "Network Engineering", "Ops
+                                    &amp; Maintenance",
+                                    "QNXT\Troubleshooting",
+                                    "Rational Tools &gt; RQMS",
+                                    "Software &gt; PC Applications"
+                                    ] }); $( "#contact_location"
+                                    ).autocomplete({ source: [ "MMS
+                                    - Remote", "CA - SMO Clinic",
+                                    "CA - 200 Molina Center", "CA -
+                                    300 Molina Center", "CA -
+                                    Colton", "CA - Golden Shore",
+                                    "CA - Hughes Way", "CA -
+                                    Landmark", "CA - Long Beach",
+                                    "CA - Sacramento Regional", "CA
+                                    - San Diego Regional", "DC -
+                                    Washington DC Legal", "FL -
+                                    Miami Doral", "FL - West Palm
+                                    Beach", "FL - Tampa", "FL -
+                                    Tallahassee", "IN -
+                                    Merrillville", "ID - Boise",
+                                    "LA - Ste 110 Baton Rouge", "LA
+                                    - Ste 250 Baton Rouge", "ME -
+                                    Augusta", "MI - Troy", "MO -
+                                    Jefferson City", "MO - Kansas
+                                    City", "MO - St Louis", "NJ -
+                                    Trenton", "NM - Albuquerque",
+                                    "NM - Santa Fe", "OH -
+                                    Columbus", "TX - San Antonio",
+                                    "TX - Houston", "TX - Dallas",
+                                    "TX -
+                                    Edinburg/McAllen/Hidalgo", "TX
+                                    - El Paso", "TX - Irving", "TX
+                                    - Laredo", "TX - McAllen", "TX
+                                    - Park Row Plaza", "UT -
+                                    Midvale", "VA - Arlington", "VA
+                                    - Herndon", "VA - VA Clinics",
+                                    "VA - Glen Allen", "VA -
+                                    Virginia Beach", "VA - North
+                                    County", "VA - South County",
+                                    "VA - Reston", "WA - 17th Ave
+                                    Bothell", "WA - Bothell", "WA -
+                                    Compass Clinic", "WA -
+                                    Spokane", "WA - South Everett",
+                                    "WV - Charleston", "WI - West
+                                    Allis" ] }); $(
+                                    "#eportal_location"
+                                    ).autocomplete({ source: [ "CA
+                                    - California", "FL - Florida",
+                                    "IL - Illinois", "MI -
+                                    Michigan", "MO - Missouri", "NM
+                                    - New Mexico", "OH - Ohio", "TX
+                                    - Texas", "UT - Utah", "WA -
+                                    Washington", "WI - Wisconsin",
+                                    "Medicare" ] }); $(function() {
+                                    $( document ).tooltip({
+                                    position: { my: "center
+                                    bottom-20", at: "center
+                                    top",}}); }); $(function() { $(
+                                    "#datepicker" ).datepicker({
+                                    maxDate: "+0D", altField:
+                                    "#last_working_date",
+                                    altFormat: "DD - MM d, yy" });
+                                    $(function(){
+                                    $('#normal').autosize();
+                                    $('#resolution_details').autosize();
+                                    }); });</script>
+                                    <script>var flagclock = 0; var
+                                    flagstop = 1; var stoptime = 0;
+                                    var currenttime; var splitdate
+                                    = ''; var output; var clock;
+                                    function startstop() { var
+                                    startstop =
+                                    document.getElementById('startstoptimer');
+                                    var startdate = new Date(); var
+                                    starttime =
+                                    startdate.getTime();
+                                    if(flagclock==0) {
+                                    startstop.value = 'Submit';
+                                    flagclock = 1;
+                                    counter(starttime); } else {
+                                    startstop.value = 'Submit';
+                                    flagclock = 0; flagstop = 1;
+                                    splitdate = ''; } } function
+                                    counter(starttime) { output =
+                                    document.getElementById('output');
+                                    clock =
+                                    document.getElementById('clock');
+                                    currenttime = new Date(); var
+                                    timediff =
+                                    currenttime.getTime() -
+                                    starttime; if(flagstop == 1) {
+                                    timediff = timediff + stoptime
+                                    } if(flagclock == 1) {
+                                    clock.value =
+                                    formattime(timediff,'');
+                                    refresh = setTimeout('counter('
+                                    + starttime + ');',10); } else
+                                    { window.clearTimeout(refresh);
+                                    stoptime = timediff; } }
+                                    function
+                                    formattime(rawtime,roundtype) {
+                                    if(roundtype == 'round') { var
+                                    ds = Math.round(rawtime/100) +
+                                    ''; } else { var ds =
+                                    Math.floor(rawtime/100) + ''; }
+                                    var sec =
+                                    Math.floor(rawtime/1000); var
+                                    min =
+                                    Math.floor(rawtime/60000); ds =
+                                    ds.charAt(ds.length - 1);
+                                    if(min &gt;= 60) { startstop();
+                                    } sec = sec - 60 * min + '';
+                                    if(sec.charAt(sec.length - 2)
+                                    != '') { sec =
+                                    sec.charAt(sec.length - 2) +
+                                    sec.charAt(sec.length - 1); }
+                                    else { sec = 0 +
+                                    sec.charAt(sec.length - 1); }
+                                    min = min + '';
+                                    if(min.charAt(min.length - 2)
+                                    != '') { min =
+                                    min.charAt(min.length -
+                                    2)+min.charAt(min.length - 1);
+                                    } else { min = 0 +
+                                    min.charAt(min.length - 1); }
+                                    return min + ':' + sec ;
+                                    }</script>
+                                    <script>function
+                                    setStartTimeNow() { var d = new
+                                    Date(); var YYYY =
+                                    d.getFullYear(); var MO =
+                                    d.getMonth() + 1; var DD =
+                                    d.getDate(); var HH =
+                                    d.getHours(); var weekday=new
+                                    Array (7); weekday[0]="Sunday";
+                                    weekday[1]="Monday";
+                                    weekday[2]="Tuesday";
+                                    weekday[3]="Wednesday";
+                                    weekday[4]="Thursday";
+                                    weekday[5]="Friday";
+                                    weekday[6]="Saturday"; var n =
+                                    weekday[d.getDay()]; var pp =
+                                    "AM"; var h = HH; if (h &gt;=
+                                    12) { h = HH-12; pp = "PM";} if
+                                    ( h == 0) { h = 12;} var MM =
+                                    d.getMinutes(); var time = h +
+                                    ":" + (MM &lt; 10 ? "0" : "") +
+                                    MM + " " + pp + " - " + n + ",
+                                    " + (MO &lt; 10 ? "0" : "") +
+                                    MO + "/" + (DD &lt; 10 ? "0" :
+                                    "") + DD + "/" + (YYYY &lt; 10
+                                    ? "0" : "") + YYYY; theInput =
+                                    document.getElementById("timer_start");
+                                    theInput.value = time;
+                                    }</script>
+                                    <script>function
+                                    setStartTimeNow2() { var d =
+                                    new Date(); var YYYY =
+                                    d.getFullYear(); var MO =
+                                    d.getMonth() + 1; var DD =
+                                    d.getDate(); var HH =
+                                    d.getHours(); var weekday=new
+                                    Array (7); weekday[0]="Sunday";
+                                    weekday[1]="Monday";
+                                    weekday[2]="Tuesday";
+                                    weekday[3]="Wednesday";
+                                    weekday[4]="Thursday";
+                                    weekday[5]="Friday";
+                                    weekday[6]="Saturday"; var n =
+                                    weekday[d.getDay()]; var pp =
+                                    "AM"; var h = HH; if (h &gt;=
+                                    12) { h = HH-12; pp = "PM";} if
+                                    ( h == 0) { h = 12;} var MM =
+                                    d.getMinutes(); time2 = h + ":"
+                                    + (MM &lt; 10 ? "0" : "") + MM
+                                    + " " + pp + " - " + n + ", " +
+                                    (MO &lt; 10 ? "0" : "") + MO +
+                                    "/" + (DD &lt; 10 ? "0" : "") +
+                                    DD + "/" + (YYYY &lt; 10 ? "0"
+                                    : "") + YYYY; theInput =
+                                    document.getElementById("timer_end");
+                                    theInput.value = time2;
+                                    }</script>
+                                  </input>
+                                </div>
+                              </input>
+                            </div></div></p>
+                          </p>
+                        </div></p></p>
+                      </div>
+                    </input>
+                  </input></label>
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

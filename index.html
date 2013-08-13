@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+  <!--<![endif]-->
+  <head>
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8"></meta>
+    <title>ITSM Ticketing Form v5</title>
+    <meta name="description" content="ITSM Ticketing Form V2">
+    </meta>
+    <meta name="author" content="Adrian-Vincent Usi"></meta>
+    <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1">
+    </meta>
+    <!-- JavaScript
+  ================================================== -->
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="js/jquery.autosize.js"></script>
+    <script src="js/write-results.js"></script>
+    <script src="js/display.js"></script>
+    <script src="js/functions.js"></script>
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="css/base.css"></link>
+    <link rel="stylesheet" href="css/skeleton.css"></link>
+    <link rel="stylesheet" href="css/layout.css"></link>
+    <link rel="stylesheet" href="css/main.css"></link>
+    <link rel="stylesheet" href="css/redmond/jquery-ui-1.9.2.custom.min.css" />
+    <!-- Favicon
+        ================================================== -->
+    <link rel="shortcut icon" href="src/images/favicon.ico"></link>
+  </head>
+  <body>
+    <div class="container">
+      <div class="two columns sidebar">
+      <nav>
+      <!-- Navigation Bar
+        ================================================== -->
+      &#160; 
+      <h4 id="guide">
+        <a>Guide</a>
+      </h4>
+      <ul id="guide_list">
+        <li>
+          <a href="#existing_incident">Existing Incident</a>
+        </li>
+        <li>
+          <a href="#contact_information">Contact Info</a>
+        </li>
+        <li>
+          <a href="#issue_details">Issue Details</a>
+        </li>
+        <li>
+          <a href="#related_tickets">Related Tickets</a>
+        </li>
+        <li>
+          <a href="#resolution">Resolution Details</a>
+        </li>
+        <li>
+          <a href="#impact_urgency">Impact &amp; Urgency</a>
+        </li>
+      </ul>
+      <h4 id="quick_tickets">
+        <a>Quick Tickets</a>
+      </h4>
+      <ul id="quick_tickets_list">
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=877','mywindowtitle','width=800,height=600')">
+          AD Account Unlock</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=922','mywindowtitle','width=800,height=600')">
+          AD Password Reset</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=878','mywindowtitle','width=800,height=600')">
+          Checkpoint</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=1411','mywindowtitle','width=800,height=600')">
+          Kronos Unlock</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=2444','mywindowtitle','width=800,height=600')">
+          Missing Outlook Icon</a>
+        </li>
+        <li>
+          <a href="javascript:window.open('http://support.molina.mhc/Aexhdsd/worker/Default.aspx?cmd=newItem&amp;qid=877','mywindowtitle','width=800,height=600')">
+          BLAH!</a>
+        </li>
+      </ul></nav>&#160;</div>
+      <!-- Begin Main Content -->
+      <div class="twelve columns offset-by-one content">
+        <header>
+          <h1>ITSM Ticket Form v.2</h1>
+        </header>
+        <hr class="large" />
+        <form action="" method="" name="form">
+          <div class="doc-section" id="existing_incident">
+            <!-- Begin Tabs -->
+            <div id="tabs">
+              <ul>
+                <li>
+                  <a href="#tabs-1">ITSM</a>
+                </li>
+                <li>
+                  <a href="#tabs-2">ePortal</a>
+                </li>
+              </ul>
+              <!-- Begin Tab 1 -->
+              <div id="tabs-1">
+                <!-- Begin Step 1 -->
+                <p>
+                  <h4>Already have a ticket?</h4>
+                  <input type="text" id="existing_ticket_number">
+                  </input>
+                  <input id="find_ticket" type="button"
+                  value="Find"></input>
+                </p>
+                <!-- End Step 1 -->
+                <!-- Begin Step 2 -->
+                <div class="doc-section" id="contact_information">
+                  <h4>Contact Information</h4>
+                  <div class="five columns alpha">
+                    <p>
+                      <label for="contact_name">Contact
+                      Name</label>
+                      <input type="text" id="contact_name" />
+                    </p>
+                  </div>
+                  <div class="five columns omega">
+                    <p>
+                      <label for="contact_location">Contact
+                      Location</label>
+                      <input type="text" id="contact_location" />
+                    </p>
+                  </div>
+                  <div class="doc-section">
+                    <div class="five columns alpha">
+                      <p>
+                        <label for="contact_number">Contact
+                        Number</label>
+                        <input type="text" id="contact_number" />
+                      </p>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <!-- End Step 2 -->
+                <!-- Begin Step 3 -->
+                <div class="doc-section" id="brief_issue">
+                  <h4>Issue Description</h4>
+                  <div class="five columns alpha">
+                    <p>
+                      <label for="application_name">Application
+                      Name</label>
+                      <input type="text" id="application_name"
+                      title="Name of the application or program the user is calling about." />
+                    </p>
+                  </div>
+                  <div class="five columns omega">
+                    <p>
+                      <label for="application_issue">Application
+                      Issue</label>
+                      <input type="text" id="application_issue"
+                      title="What is broken or what needs updating?" />
+                    </p>
+                  </div>
+                  <label for="application_category">Application
+                  Category</label>
+                  <input type="text" id="application_category" />
+                </div>
+                <!-- End Step 3 -->
+                <!-- Begin Step 4 -->
+                <div class="doc-section">
+                  <div class="five columns alpha">
+                    <label for="last_working_date">Last Working
+                    Date
+                    <input type="text" id="datepicker" /></label>
+                  </div>
+                  <div class="five columns omega">
+                    <label for="ip_address">IP or Computer
+                    Name</label>
+                    <input type="text" id="ip_address"
+                    title="10.3.x.x or MCA-??" />
+                  </div>
+                </div>
+                <hr />
+                <!-- End Step 4 -->
+                <!-- Begin Step 5 -->
+                <div class="doc-section" id="issue_details">
+                  <h4>Ticket Information</h4>
+                  <div class="four columns alpha">
+                    <p>
+                      <label for="general_ticket">
+                        <input type="radio" name="ticket_templates"
+                        id="general_ticket" value=""
+                        onclick="writeResultGENERAL('');" />
+                        <span>General Ticket</span>
+                      </label>
+                      <label for="qnxt_ticket">
+                        <input type="radio" name="ticket_templates"
+                        id="qnxt_ticket" value=""
+                        onclick="writeResultQNXT('');" />
+                        <span>QNXT Ticket</span>
+                      </label>
+                      <label for="vpn_ticket">
+                        <input type="radio" name="ticket_templates"
+                        id="vpn_ticket" value=""
+                        onclick="writeResultVPN('');" />
+                        <span>VPN Ticket</span>
+                      </label>
+                      <label for="telephony_ticket">
+                        <input type="radio" name="ticket_templates"
+                        id="telephony_ticket" value=""
+                        onclick="writeResultTELEPHONY('');" />
+                        <span>Telephony Ticket</span>
+                      </label>
+                      <label for="network_ticket">
+                        <input type="radio" name="ticket_templates"
+                        id="network_ticket" value=""
+                        onclick="writeResultNETWORK('');" />
+                        <span>Network Ticket</span>
+                      </label>
+                    </p>
+                  </div>
+                  <div class="seven columns omega">
+                    <p>
+                      <textarea name="normal" id="normal">
+                      </textarea>
+                    </p>
+                  </div>
+                </div>
+                <hr />
+                <!-- End Step 5 -->
+                <!-- Begin Step 6 -->
+                <div class="doc-section" id="related_tickets">
+                  <h4>Related Tickets</h4>
+                  <p>If this has the potential to become a SEV1
+                  issue, have you checked the Altiris queue for
+                  similar tickets?</p>
+                  <label for="yes_related_tickets">
+                    <input type="radio" name="related_tickets"
+                    id="yes_related_tickets"
+                    value="Yes, I have checked with the team regarding related tickets" />
+                    <span>Yes, I have checked with the team
+                    regarding related tickets</span>
+                  </label>
+                  <label for="no_related_tickets">
+                    <input type="radio" name="related_tickets"
+                    id="no_related_tickets"
+                    value="No, this is not a potential SEV1 issue" />
+                    <span>No, this is not a potential SEV1
+                    issue</span>
+                  </label>
+                  <h4>Ticket Type</h4>
+                  <p>What kind of ticket is this?</p>
+                  <label for="servicerequest_ticket">
+                    <input type="radio" name="type_of_tickets"
+                    id="servicerequest_ticket"
+                    value="Service Request"
+                    onclick="writeResultTYPE_OF_TICKET('Service Request');" />
+                    <span>Service Request - Account locked? Need
+                    something installed?</span>
+                  </label>
+                  <label for="incident_ticket">
+                    <input type="radio" name="type_of_tickets"
+                    id="incident_ticket" value="Incident"
+                    onclick="writeResultTYPE_OF_TICKET('Incident');" />
+                    <span>Incident - Broken application? Break-fix
+                    issue? Unable to connect?</span>
+                  </label>
+                </div>
+                <hr />
+                <!-- End Step 6 -->
+                <!-- Begin Step 7 -->
+                <div class="doc-section" id="resolution">
+                  <h4>Resolution Details</h4>
+                  <p>Were you able to resolve or find a temporary
+                  workaround?</p>
+                  <label for="resolution_fix">
+                    <input type="radio" name="resolutions"
+                    id="resolution_fix"
+                    value="Yes, resolved. Steps listed below." />
+                    <span>Yes, resolved. Steps listed below</span>
+                  </label>
+                  <label for="resolution_workaround">
+                    <input type="radio" name="resolutions"
+                    id="resolution_workaround"
+                    value="Yes, resolved but with a workaround." />
+                    <span>Yes, resolved but with a
+                    workaround</span>
+                  </label>
+                  <h4>Routing Information</h4>
+                  <p>Where or which team are you sending this
+                  ticket to?</p>
+                  <label for="resolution_routing">
+                    <input type="radio" name="resolutions"
+                    id="resolution_routing"
+                    value="Routing ticket to appropriate team." />
+                    <span>Not supported by the Service Desk.
+                    Routing ticket to appropriate team.</span>
+                  </label>
+                  <label for="resolution_local">
+                    <input type="radio" name="resolutions"
+                    id="resolution_local"
+                    value="Requesting local tech for user support." />
+                    <span>Service Desk unable to support user.
+                    Requesting local tech for user support.</span>
+                  </label>
+                  <p>
+                    <textarea name="resolution_details"
+                    id="resolution_details"></textarea>
+                  </p>
+                  <label for="building_location">Floor, Department
+                  and Cubicle</label>
+                  <input type="text" id="building_location"
+                  title="Bothell, 1st floor, IT, cube #20-221" />
+                </div>
+                <!-- End Step 7 -->
+                <!-- Begin Step 8 -->
+                <div class="doc-section" id="impact_urgency">
+                  <h4>Impact &amp; Urgency</h4>
+                  <p>How many people are affected?</p>
+                  <label for="impact_low">
+                    <input type="radio" name="impact"
+                    id="impact_low"
+                    onclick="writeResultIMPACT('Low (single user)')" />
+                    <span>Single User</span>
+                  </label>
+                  <label for="impact_medium">
+                    <input type="radio" name="impact"
+                    id="impact_medium"
+                    onclick="writeResultIMPACT('Medium - VIP or More than one user but less than an entire department');" />
+                    <span>More than one user but less than an
+                    entire department</span>
+                  </label>
+                  <label for="impact_high">
+                    <input type="radio" name="impact"
+                    id="impact_high"
+                    onclick="writeResultIMPACT('High - Entire department');" />
+                    <span>VIPs, one or more entire departments but
+                    less than a state</span>
+                  </label>
+                  <label for="impact_critical">
+                    <input type="radio" name="impact"
+                    id="impact_critical"
+                    onclick="writeResultIMPACT('Critical - One or more entire states/entire company/external and state customer');" />
+                    <span>One or more entire states, entire company
+                    or an external customer</span>
+                  </label>
+                  <div style="text-align:center;">
+                    <img id="tablemap" src="img/table1.png"
+                    usemap="#tablemap" border="0" width="750"
+                    height="400" style="border:0px solid #ccc" />
+                    <map id="_tablemap" name="tablemap">
+                      <area shape="rect" coords="88,45,182,107"
+                      onclick="javascript:writeResultURGENCY('Critical; Tier 1 - Full Disruption during Production Hours');" />
+                      <area shape="rect" coords="89,136,183,198"
+                      onclick="javascript:writeResultURGENCY('High; Tier 1 - Partial Disruption during Production Hours');" />
+                      <area shape="rect" coords="189,138,283,200"
+                      onclick="javascript:writeResultURGENCY('High; Tier 1 - Full Disruption during Non-Production Hours');" />
+                      <area shape="rect" coords="311,138,405,200"
+                      onclick="javascript:writeResultURGENCY('High; Tier 2 - Full Disruption during Production Hours');" />
+                      <area shape="rect" coords="189,229,283,291"
+                      onclick="javascript:writeResultURGENCY('Medium; Tier 1 - Partial Disruption during Non-Production Hours');" />
+                      <area shape="rect" coords="311,227,405,289"
+                      onclick="javascript:writeResultURGENCY('Medium; Tier 2 - Partial Disruption during Production Hours');" />
+                      <area shape="rect" coords="413,227,507,289"
+                      onclick="javascript:writeResultURGENCY('Medium; Tier 2 - Full Disruption during Non-Production Hours');" />
+                      <area shape="rect" coords="537,229,631,291"
+                      onclick="javascript:writeResultURGENCY('Medium; Tier 3 - Full Disruption during Production Hours');" />
+                      <area shape="rect" coords="414,318,508,380"
+                      onclick="javascript:writeResultURGENCY('Low; Tier 2 - Partial Disruption during Non-Production Hours');" />
+                      <area shape="rect" coords="536,320,726,382"
+                      onclick="javascript:writeResultURGENCY('Low; Tier 3 - Partial Disruption during Production or Non-Production Hours');" />
+                    </map>
+                  </div>
+                  <input type="text" id="urgency_display" title="">
+                  </input>
+                </div>
+                <hr />
+                <!-- End Step 8 -->
+                <!-- Begin Step 9 -->
+                <div class="doc-section">
+                  <p>
+                    <!--<button type="submit" id="startstoptimer"
+                    onclick="javascript:if(confirm('Submit form?')) {window.location.reload();};runFunctions2()">
+                    Submit Form</button>-->
+                    <button type="button" id="dialog-btn">Done</button>
+                  </p>
+                </div>
+                <!-- End Step 9 -->
+              </div>
+              <!-- End Tab 1 -->
+              <!-- Begin Tab 2 -->
+              <div id="tabs-2">
+				<!-- Begin Step 1 -->
+                <div class="doc-section" id="contact_information">
+                  <h4>Contact Information</h4>
+                  <div class="five columns alpha">
+                    <p>
+                      <label for="eportal_name">Contact
+                      Name</label>
+                      <input type="text" id="eportal_name" />
+                    </p>
+                  </div>
+                  <div class="five columns omega">
+                    <p>
+                      <label for="eportal_location">Contact
+                      Location</label>
+                      <input type="text" id="eportal_location" />
+                    </p>
+                  </div>
+                  <div class="doc-section">
+                    <div class="five columns alpha">
+                      <p>
+                        <label for="eportal_number">Contact
+                        Number</label>
+                        <input type="text" id="eportal_number" />
+                      </p>
+                    </div>
+                  </div>
+				  <hr>
+				  <label for="member">
+                    <input type="radio" name="member_or_provider"
+                    id="member"
+                    value="Member" />
+                    <span>Member</span>
+                  </label>
+                  <label for="provider">
+                    <input type="radio" name="member_or_provider"
+                    id="provider"
+                    value="Provider" />
+                    <span>Provider</span>
+                  </label>
+                  <hr />
+                </div>
+                <!-- End Step 1 -->
+				<!-- Begin Step 2 -->
+				<h4>Issue Details</h4>
+				<p>
+                    <textarea name="eportal_issue_details"
+                    id="eportal_issue_details"></textarea>
+                  </p>
+                  <h4>Account Info</h4>
+                  <label for="medicaid">
+                    <input type="radio" name="medicaid_or_medicare"
+                    id="medicaid"
+                    value="Medicaid" />
+                    <span>Medicaid</span>
+                  </label>
+                  <label for="medicare">
+                    <input type="radio" name="medicaid_or_medicare"
+                    id="medicare"
+                    value="Medicare" />
+                    <span>Medicare</span>
+                  </label>
+				  <div class="doc-section" id="contact_information">
+              
+                  <div class="five columns alpha">
+                    <p>
+                      <label for="tax_id">Tax ID</label>
+                      <input type="text" id="tax_id" />
+                    </p>
+                  </div>
+                  <div class="five columns omega">
+                    <p>
+                      <label for="eportal_user_id">User ID</label>
+                      <input type="text" id="eportal_user_id" />
+                    </p>
+                  </div>
+                  <div class="doc-section">
+                    <div class="five columns alpha">
+                      <p>
+                        <label for="facility_name">Facility Name</label>
+                        <input type="text" id="facility_name" />
+                      </p>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                  
+				<!-- End Step 2 -->
+				<!-- Begin Step 3 -->
+				<h4>Resolution Details</h4>
+				<p>
+                    <textarea name="eportal_resolution_details"
+                    id="eportal_resolution_details"></textarea>
+                  </p>
+				  <!-- End Step 3 -->
+				  <!-- Being Step Final -->
+				  <div class="doc-section">
+                  <p>
+                    
+                    <button type="button" id="eportal-dialog-btn">Done</button>
+                  </p>
+                </div>
+				  <!-- End Final Step -->
+              </div>
+              <!-- End Tab 2 -->
+              <!-- End Tabs -->
+              <div id="dialog" title="ITSM Ticket Wizard"></div>
+			  <div id="eportal-dialog" title="ePortal Ticket Wizard"></div>
+              <!-- Hidden Inputs
+        ================================================== -->
+              <input type="text" name="existing_incident_out"
+              id="existing_incident_out" size="40"
+              style="display: none;" />
+              <input type="text" name="type_of_ticket_out"
+              id="type_of_ticket_out" size="40"
+              style="display: none;" />
+              <input type="text" name="urgency_out"
+              id="urgency_out" size="40" style="display: none;" />
+              <input type="text" name="impact_out" id="impact_out"
+              size="40" style="display: none;" />
+              <input type="text" name="timer_start"
+              id="timer_start" size="40" style="display: none;" />
+              <input type="text" name="timer_end" id="timer_end"
+              size="40" style="display: none;" />
+              <!-- End Hidden Inputs -->
+              <!-- Begin Footer -->
+              <div class="resize">
+                <input id="clock" type="text" value="00:00"
+                style="background-color:white;border:1px solid gray;font-weight:bold;font-size:16pt;"></input>
+
+                  <!-- Begin Body Loading Javascript -->
+                  
+                
+                <!-- End Body Loading Javascript -->
+              </div>
+              <!-- End Footer -->
+              <!-- End Main Content -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

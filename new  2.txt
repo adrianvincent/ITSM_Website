@@ -1,0 +1,32 @@
+<div style="text-align:center; width:893px; margin-left:auto; margin-right:auto;">
+<img id="Image-Maps_2201301081410407" src="http://www.image-maps.com/uploaded_files/2201301081410407_1-8-2013%2011-08-36%20AM.png" usemap="#Image-Maps_2201301081410407" border="0" width="893" height="360" alt="" />
+<map id="_Image-Maps_2201301081410407" name="Image-Maps_2201301081410407">
+<area shape="rect" coords="103,42,217,102" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="103,121,217,181" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="224,122,338,182" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="224,202,338,262" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="370,122,484,182" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="370,203,484,263" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="491,204,605,264" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="635,203,749,263" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="493,282,607,342" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="636,285,866,345" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="891,358,893,360" href="http://www.image-maps.com/index.php?aff=mapped_users_2201301081410407" alt="Image Map" title="Image Map" />
+</map>
+<!-- Image map text links - Start - If you do not wish to have text links under your image map, you can move or delete this DIV -->
+<div style="text-align:center; font-size:12px; font-family:verdana; margin-left:auto; margin-right:auto; width:893px;">
+	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/" title="Untitled">Untitled</a>
+ | 	<a style="text-decoration:none; color:black; font-size:12px; font-family:verdana;" href="http://www.image-maps.com/index.php?aff=mapped_users_2201301081410407" title="Image Map">Image Map</a>
+</div>
+<!-- Image map text links - End - -->
+
+</div>
